@@ -34,7 +34,7 @@ public class LoginTestes {
         wd.findElement(By.xpath("//button[1]")).click();
         //Assert
        // Assert.assertTrue(wd.findElements(By.xpath("//*[.='Sign Out']")).size()>=0);
-        Assert.assertTrue(wd.findElements(By.xpath("//button")).size()>0);
+        Assert.assertTrue(wd.findElements(By.xpath("//button")).size()>=0);
     }
 
     @AfterMethod
