@@ -15,7 +15,7 @@ public class RegistrationTest {
     public void init() {
         wd = new ChromeDriver();
         wd.navigate().to("https://telranedu.web.app/home");
-        wd.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+        wd.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
     }
     @Test
     public void registrationPositiveTest(){
@@ -38,7 +38,23 @@ public class RegistrationTest {
         //Assert
         // Assert.assertTrue(wd.findElements(By.xpath("//*[.='Sign Out']")).size()>=0);
         Assert.assertTrue(wd.findElements(By.xpath("//button")).size()>0);
+    }
+    @Test
+    public void registrationNegativeTest(){
+        wd.findElement(By.xpath("//*[.='LOGIN']")).click();
 
+        //fill login form
+        WebElement emailInput = wd.findElement(By.xpath("//input[1]"));
+        emailInput.click();
+        emailInput.clear();
+        emailInput.sendKeys("vasya_pupkin@gmail.com");
+
+        WebElement passInput = wd.findElement(By.xpath("//input[2]"));
+        passInput.click();
+        passInput.clear();
+        passInput.sendKeys("Vp12345$");
+        //click on button Registration
+        wd.findElement(By.xpath("//button[2]")).click();
     }
 
     @AfterMethod

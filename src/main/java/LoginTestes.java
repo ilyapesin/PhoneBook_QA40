@@ -18,8 +18,8 @@ public class LoginTestes {
         wd.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
     }
 
-    @Test
-    public void loginPositiveTest(){
+   @Test
+    public void loginPositiveTest() {
         // open login form
         wd.findElement(By.xpath("//*[.='LOGIN']")).click();
 
