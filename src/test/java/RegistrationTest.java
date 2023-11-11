@@ -5,18 +5,22 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
 
 import java.util.concurrent.TimeUnit;
 
 public class RegistrationTest extends TestBase{
 //    WebDriver wd;
-//    @BeforeMethod
-//    public void init() {
-//        wd = new ChromeDriver();
+//    @BeforeSuite
+//    public void init(){
+//        wd=new ChromeDriver();
 //        wd.navigate().to("https://telranedu.web.app/home");
-//        wd.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+//        // wd.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 //    }
+
+
+
     @Test
     public void registrationPositiveTest(){
         // open login form
