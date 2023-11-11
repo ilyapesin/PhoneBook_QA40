@@ -12,11 +12,11 @@ import java.util.concurrent.TimeUnit;
 
 public class RegistrationTest extends TestBase{
 //    WebDriver wd;
-//    @BeforeSuite
+//    @BeforeMethod
 //    public void init(){
 //        wd=new ChromeDriver();
 //        wd.navigate().to("https://telranedu.web.app/home");
-//        // wd.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+//        wd.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 //    }
 
 
