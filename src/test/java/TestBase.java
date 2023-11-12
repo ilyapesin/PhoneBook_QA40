@@ -52,8 +52,14 @@ public class TestBase {
 
     }
     public void submitRegistrationForm(){
+
         click(By.xpath("//button[2]"));
     }
+    public void submitLoginForm(){
+
+        click(By.xpath("//button[1]"));
+    }
+
     public boolean isElementPresent(By locator){
 
         return wd.findElements(locator).size()>0;
