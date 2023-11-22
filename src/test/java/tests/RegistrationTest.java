@@ -28,7 +28,10 @@ public class RegistrationTest extends TestBase{
     }
     @Test
     public void registrationPositiveTestUser(){
-        User user =new User().withEmail("vasya_pupkin"+(int)(System.currentTimeMillis()/1000)%3600+"@gmail.com").withPassword("Vp12345$");
+        User user =new User()
+                .withEmail("vasya_pupkin"+(int)(System.currentTimeMillis()/1000)%3600+"@gmail.com")
+                .withPassword("Vp12345$")
+                ;
         app.getUser().openLoginForm();
         app.getUser().fillLoginForm(user);
         app.getUser().submitRegistrationForm();
