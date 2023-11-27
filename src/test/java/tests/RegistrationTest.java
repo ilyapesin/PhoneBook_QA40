@@ -1,11 +1,15 @@
 package tests;
 
+import manager.TestNGListener;
 import models.User;
 import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
+
+@Listeners(TestNGListener.class)
 
 public class RegistrationTest extends TestBase{
     @BeforeMethod

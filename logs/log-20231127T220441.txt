@@ -1,0 +1,14 @@
+22:04:47 INFO  tests.TestBase - Method loginPositiveTest is started
+22:04:47 INFO  manager.WebDriverListener - beforeFindBy---> By.xpath: //*[.='Sign Out']
+22:04:52 INFO  manager.WebDriverListener - afterFind--->By.xpath: //*[.='Sign Out']
+22:04:52 INFO  manager.WebDriverListener - beforeFindBy---> By.xpath: //*[.='LOGIN']
+22:04:52 INFO  manager.WebDriverListener - afterFind--->By.xpath: //*[.='LOGIN']
+22:04:52 INFO  manager.WebDriverListener - beforeFindBy---> By.xpath: //input[1]
+22:04:52 INFO  manager.WebDriverListener - afterFind--->By.xpath: //input[1]
+22:04:52 INFO  manager.WebDriverListener - beforeFindBy---> By.xpath: //input[2]
+22:04:52 INFO  manager.WebDriverListener - afterFind--->By.xpath: //input[2]
+22:04:52 INFO  manager.WebDriverListener - beforeFindBy---> By.xpath: //button[1]
+22:04:52 INFO  manager.WebDriverListener - afterFind--->By.xpath: //button[1]
+22:04:55 INFO  manager.WebDriverListener - beforeFindBy---> By.xpath: //button
+22:04:55 INFO  manager.WebDriverListener - afterFind--->By.xpath: //button
+22:04:55 INFO  tests.TestBase - ================================

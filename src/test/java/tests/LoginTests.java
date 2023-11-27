@@ -47,17 +47,22 @@ public class LoginTests extends TestBase {
        app.getUser().openLoginForm();
        app.getUser().fillLoginForm(email, password);
        app.getUser().submitLoginForm();
+        Assert.assertTrue(app.getUser().isWarningFormatMessage());
+        Assert.assertTrue(app.getUser().isAlertPresent());
 
     }@Test
     public void loginNegativeTestWrongEmailUser(){
         User user =new User()
-               .withEmail("vasya_pupkingmailgmail.com")
+               .withEmail("vasya_pupkingmail.com")
                .withPassword("Vp12345$")
                 ;
 
        app.getUser().openLoginForm();
        app.getUser().fillLoginForm(user);
        app.getUser().submitLoginForm();
+
+       Assert.assertTrue(app.getUser().isWarningFormatMessage());
+       Assert.assertTrue(app.getUser().isAlertPresent());
 
     }
     @Test
@@ -67,6 +72,8 @@ public class LoginTests extends TestBase {
         app.getUser().openLoginForm();
         app.getUser().fillLoginForm(email, password);
         app.getUser().submitLoginForm();
+        Assert.assertTrue(app.getUser().isWarningFormatMessage());
+        Assert.assertTrue(app.getUser().isAlertPresent());
     } @Test
     public void loginNegativeTestWrongPasswordUser(){
         User user =new User()
@@ -76,6 +83,8 @@ public class LoginTests extends TestBase {
         app.getUser().openLoginForm();
         app.getUser().fillLoginForm(user);
         app.getUser().submitLoginForm();
+        Assert.assertTrue(app.getUser().isWarningFormatMessage());
+        Assert.assertTrue(app.getUser().isAlertPresent());
     }
 
     @AfterMethod
