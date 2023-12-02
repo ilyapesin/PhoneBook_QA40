@@ -23,7 +23,7 @@ public class TestBase {
     @AfterSuite
     public  void  stop(){
 
-        app.tearDown();
+       // app.tearDown();
     }
     @BeforeMethod
     public void setLogger(Method method){

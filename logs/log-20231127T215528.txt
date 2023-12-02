@@ -1,2 +1,0 @@
-21:55:34 INFO  tests.TestBase - Method public void tests.LoginTests.loginPositiveTest() isstarted
-21:55:42 INFO  tests.TestBase - ================================
