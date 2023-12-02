@@ -34,6 +34,7 @@ public class ApplicationManager {
         user=new HelperUser(wd);
         contact=new HelperContact(wd);
         wd.navigate().to("https://telranedu.web.app/home");
+        wd.manage().window().maximize();
         wd.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
     }
     @AfterSuite

@@ -25,7 +25,7 @@ Logger logger= LoggerFactory.getLogger(AddNewContactTests.class);
         Contact contact= Contact.builder()
                 .name("John"+i)
                 .lastName("Smith")
-                .phone("0123456"+i)
+                .phone("0123456789"+i)
                 .email("john"+i+"@gmail.com")
                 .address("Tel-Aviv")
                 .description("Fred")
@@ -36,7 +36,6 @@ logger.info("Phone number is "+contact.getPhone());
         app.getContact().submitContactForm();
         app.getContact().pause(3000);
         Assert.assertTrue(app.getContact().isContactCreated(contact));
-
-
     }
+
 }
