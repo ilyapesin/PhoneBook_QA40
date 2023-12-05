@@ -19,17 +19,17 @@ public class RegistrationTest extends TestBase{
 
         }
     }
-    @Test
-    public void registrationPositiveTest(){
-        int i=(int)(System.currentTimeMillis()/1000)%3600;
-        String email="vasya_pupkin"+i+"@gmail.com";
-        String password="Vp12345$";
-        app.getUser().openLoginForm();
-        app.getUser().fillLoginForm(email, password);
-        app.getUser().submitRegistrationForm();
-        app.getUser().pause(3000);
-        Assert.assertTrue(app.getUser().isElementPresent(By.xpath("//button")));
-    }
+//    @Test
+//    public void registrationPositiveTest(){
+//        int i=(int)(System.currentTimeMillis()/1000)%3600;
+//        String email="vasya_pupkin"+i+"@gmail.com";
+//        String password="Vp12345$";
+//        app.getUser().openLoginForm();
+//        app.getUser().fillLoginForm(email, password);
+//        app.getUser().submitRegistrationForm();
+//        app.getUser().pause(3000);
+//        Assert.assertTrue(app.getUser().isElementPresent(By.xpath("//button")));
+//    }
     @Test
     public void registrationPositiveTestUser(){
         User user =new User()
@@ -43,15 +43,16 @@ public class RegistrationTest extends TestBase{
         Assert.assertTrue(app.getUser().isElementPresent(By.xpath("//button")));
 
     }
+//    @Test
+//    public void registrationNegativeTestWrongEmail(){
+//        int i=(int)(System.currentTimeMillis()/1000)%3600;
+//        String email="vasya_pupkingmail"+i+"gmail.com";
+//        String password="Vp12345$";
+//        app.getUser().openLoginForm();
+//        app.getUser().fillLoginForm(email, password);
+//        app.getUser().submitRegistrationForm();
+//    }
     @Test
-    public void registrationNegativeTestWrongEmail(){
-        int i=(int)(System.currentTimeMillis()/1000)%3600;
-        String email="vasya_pupkingmail"+i+"gmail.com";
-        String password="Vp12345$";
-        app.getUser().openLoginForm();
-        app.getUser().fillLoginForm(email, password);
-        app.getUser().submitRegistrationForm();
-    }@Test
     public void registrationNegativeTestWrongEmailUser(){
         int i=(int)(System.currentTimeMillis()/1000)%3600;
         User user =new User()
@@ -60,17 +61,19 @@ public class RegistrationTest extends TestBase{
         app.getUser().openLoginForm();
         app.getUser().fillLoginForm(user);
         app.getUser().submitRegistrationForm();
+        Assert.assertTrue(app.getUser().isAlertPresent());
     }
 
+//    @Test
+//    public void registrationNegativeTestWrongPassword(){
+//        int i=(int)(System.currentTimeMillis()/1000)%3600;
+//        String email="vasya_pupkingmail"+i+"@gmail.com";
+//        String password="Vp12345";
+//        app.getUser().openLoginForm();
+//        app.getUser().fillLoginForm(email, password);
+//        app.getUser().submitRegistrationForm();
+//    }
     @Test
-    public void registrationNegativeTestWrongPassword(){
-        int i=(int)(System.currentTimeMillis()/1000)%3600;
-        String email="vasya_pupkingmail"+i+"@gmail.com";
-        String password="Vp12345";
-        app.getUser().openLoginForm();
-        app.getUser().fillLoginForm(email, password);
-        app.getUser().submitRegistrationForm();
-    } @Test
     public void registrationNegativeTestWrongPasswordUser(){
         int i=(int)(System.currentTimeMillis()/1000)%3600;
         User user =new User()
@@ -81,6 +84,7 @@ public class RegistrationTest extends TestBase{
         app.getUser().openLoginForm();
         app.getUser().fillLoginForm(user);
         app.getUser().submitRegistrationForm();
+        Assert.assertTrue(app.getUser().isAlertPresent());
     }
 
     @AfterMethod

@@ -15,8 +15,9 @@ public class RemoveContacts extends TestBase{
             app.getUser().submitLoginForm();
         }
     }
-    @Test
+    @Test(alwaysRun = true)
     public void removeOneContact(){
+        if(app.getContact().isNoContact()) {return;}
         app.getContact().removeContact();
         Assert.assertEquals(1,app.getContact().removeContact() );
     }

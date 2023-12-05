@@ -20,16 +20,16 @@ public class LoginTests extends TestBase {
 
     }
 
-    @Test
-    public void loginPositiveTest(){
-       String email="vasya_pupkin@gmail.com";
-       String password="Vp12345$";
-        app.getUser().openLoginForm();
-        app.getUser().fillLoginForm(email, password);
-        app.getUser().submitLoginForm();
-        app.getUser().pause(3000);
-       Assert.assertTrue(app.getUser().isElementPresent(By.xpath("//button")));
-    }
+//    @Test
+//    public void loginPositiveTest(){
+//       String email="vasya_pupkin@gmail.com";
+//       String password="Vp12345$";
+//        app.getUser().openLoginForm();
+//        app.getUser().fillLoginForm(email, password);
+//        app.getUser().submitLoginForm();
+//        app.getUser().pause(3000);
+//       Assert.assertTrue(app.getUser().isElementPresent(By.xpath("//button")));
+//    }
     @Test
     public void loginPositiveTestUser(){
         User user =new User()
@@ -43,17 +43,18 @@ public class LoginTests extends TestBase {
         Assert.assertTrue(app.getUser().isElementPresent(By.xpath("//button")));
 
     }
+//    @Test
+//    public void loginNegativeTestWrongEmail(){
+//       String email ="vasya_pupkingmailgmail.com";
+//       String password="Vp12345$";
+//       app.getUser().openLoginForm();
+//       app.getUser().fillLoginForm(email, password);
+//       app.getUser().submitLoginForm();
+//        Assert.assertTrue(app.getUser().isWarningFormatMessage());
+//        Assert.assertTrue(app.getUser().isAlertPresent());
+//
+//    }
     @Test
-    public void loginNegativeTestWrongEmail(){
-       String email ="vasya_pupkingmailgmail.com";
-       String password="Vp12345$";
-       app.getUser().openLoginForm();
-       app.getUser().fillLoginForm(email, password);
-       app.getUser().submitLoginForm();
-        Assert.assertTrue(app.getUser().isWarningFormatMessage());
-        Assert.assertTrue(app.getUser().isAlertPresent());
-
-    }@Test
     public void loginNegativeTestWrongEmailUser(){
         User user =new User()
                .withEmail("vasya_pupkingmail.com")
@@ -68,16 +69,17 @@ public class LoginTests extends TestBase {
        Assert.assertTrue(app.getUser().isAlertPresent());
 
     }
+//    @Test
+//    public void loginNegativeTestWrongPassword(){
+//        String email ="vasya_pupkin@gmailgmail.com";
+//        String password="Vp12345";
+//        app.getUser().openLoginForm();
+//        app.getUser().fillLoginForm(email, password);
+//        app.getUser().submitLoginForm();
+//        Assert.assertTrue(app.getUser().isWarningFormatMessage());
+//        Assert.assertTrue(app.getUser().isAlertPresent());
+//    }
     @Test
-    public void loginNegativeTestWrongPassword(){
-        String email ="vasya_pupkin@gmailgmail.com";
-        String password="Vp12345";
-        app.getUser().openLoginForm();
-        app.getUser().fillLoginForm(email, password);
-        app.getUser().submitLoginForm();
-        Assert.assertTrue(app.getUser().isWarningFormatMessage());
-        Assert.assertTrue(app.getUser().isAlertPresent());
-    } @Test
     public void loginNegativeTestWrongPasswordUser(){
         User user =new User()
               .withEmail("vasya_pupkin@gmailgmail.com")
