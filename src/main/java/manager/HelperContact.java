@@ -42,7 +42,7 @@ public class HelperContact extends HelperBase{
         logger.info("Before contact ="+beforeContact);
         click(By.xpath("//div[@class='contact-item_card__2SOIM']"));
         click(By.xpath("//button[.='Remove']"));
-        pause(1000);
+        pause(500);
         int afterContact=countContact();
         logger.info("After contact ="+afterContact);
         return beforeContact-afterContact;
@@ -57,7 +57,7 @@ public class HelperContact extends HelperBase{
             removeContact();
         }
     }
-    public boolean isContactNot(){
+    public boolean isNoContact(){
        return wd.findElements(By.xpath("//div[@class='contact-item_card__2SOIM']")).size()==0;
     }
 
