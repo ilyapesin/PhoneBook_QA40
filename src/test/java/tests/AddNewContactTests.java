@@ -9,7 +9,7 @@ import org.testng.annotations.Test;
 
 public class AddNewContactTests extends TestBase {
 Logger logger= LoggerFactory.getLogger(AddNewContactTests.class);
-    @BeforeMethod
+    @BeforeMethod(alwaysRun=true)
     public void preconditions() {
         if (!app.getUser().isLogged()) {
             String email = "vasya_pupkin@gmail.com";
@@ -19,7 +19,7 @@ Logger logger= LoggerFactory.getLogger(AddNewContactTests.class);
             app.getUser().submitLoginForm();
         }
     }
-    @Test(invocationCount = 5)
+    @Test(invocationCount = 5,groups = {"positive"})
     public void addNewContactPositive(){
         int i=(int)(System.currentTimeMillis()/1000)%3600;
         Contact contact= Contact.builder()

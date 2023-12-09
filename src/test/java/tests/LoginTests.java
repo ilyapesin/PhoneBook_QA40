@@ -11,7 +11,7 @@ import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 @Listeners(TestNGListener.class)
 public class LoginTests extends TestBase {
-    @BeforeMethod
+    @BeforeMethod(alwaysRun=true)
     public  void precondition(){
         if (app.getUser().isLogged()){
             app.getUser().logOut();
@@ -30,7 +30,7 @@ public class LoginTests extends TestBase {
 //        app.getUser().pause(3000);
 //       Assert.assertTrue(app.getUser().isElementPresent(By.xpath("//button")));
 //    }
-    @Test
+    @Test(groups={"smoke", "positive"})
     public void loginPositiveTestUser(){
         User user =new User()
                 .withEmail("vasya_pupkin@gmail.com")
@@ -54,7 +54,7 @@ public class LoginTests extends TestBase {
 //        Assert.assertTrue(app.getUser().isAlertPresent());
 //
 //    }
-    @Test
+    @Test(groups = {"regress", "negative"})
     public void loginNegativeTestWrongEmailUser(){
         User user =new User()
                .withEmail("vasya_pupkingmail.com")
@@ -79,7 +79,7 @@ public class LoginTests extends TestBase {
 //        Assert.assertTrue(app.getUser().isWarningFormatMessage());
 //        Assert.assertTrue(app.getUser().isAlertPresent());
 //    }
-    @Test
+    @Test(groups = {"negative"})
     public void loginNegativeTestWrongPasswordUser(){
         User user =new User()
               .withEmail("vasya_pupkin@gmailgmail.com")

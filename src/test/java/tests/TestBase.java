@@ -18,22 +18,22 @@ public class TestBase {
 
 
 
-    @BeforeSuite
+    @BeforeSuite(alwaysRun = true)
     public void setApp(){
 
         app.init();
     }
-    @AfterSuite
+    @AfterSuite(alwaysRun = true)
     public  void  stop(){
 
         app.tearDown();
     }
-    @BeforeMethod
+    @BeforeMethod(alwaysRun = true)
     public void setLogger(Method method){
         logger.info("Method "+method.getName()+" is started");
 
     }
-    @AfterMethod
+    @AfterMethod(alwaysRun = true)
     public void end(){
         logger.info("================================");
     }

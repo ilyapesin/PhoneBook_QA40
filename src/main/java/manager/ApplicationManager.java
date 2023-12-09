@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.BrowserType;
+import org.openqa.selenium.safari.SafariDriver;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -42,6 +43,8 @@ public class ApplicationManager {
         } else if (browser.equals(BrowserType.FIREFOX)) {
             wd=new EventFiringWebDriver(new FirefoxDriver());
             logger.info("Tests start on Firefox");
+        } else if (browser.equals(BrowserType.SAFARI)) {
+            wd=new EventFiringWebDriver(new SafariDriver());
         }
 
         wd.register(new WebDriverListener());
