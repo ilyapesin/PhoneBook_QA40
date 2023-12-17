@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="tests.LoginTests" tests="3" skipped="0" failures="0" errors="0" timestamp="2023-12-17T14:10:59" hostname="Ilyas-MacBook-Air.local" time="19.652">
+  <properties/>
+  <testcase name="loginNegativeTestWrongEmailUser" classname="tests.LoginTests" time="3.142"/>
+  <testcase name="loginNegativeTestWrongPasswordUser" classname="tests.LoginTests" time="2.518"/>
+  <testcase name="loginPositiveTestUser" classname="tests.LoginTests" time="3.959"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[console.warn: LoginRecipes: "Falling back to a synchronous message for: https://telranedu.web.app."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://telranedu.web.app."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://telranedu.web.app."
+1702822277365	addons.xpi	ERROR	System addon update list error SyntaxError: XMLHttpRequest.open: 'http://%(server)s/dummy-system-addons.xml' is not a valid URL.
+]]></system-err>
+</testsuite>
