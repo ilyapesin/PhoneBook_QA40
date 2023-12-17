@@ -1,5 +1,6 @@
 package tests;
 
+import manager.ProviderData;
 import manager.TestNGListener;
 import models.User;
 import org.openqa.selenium.By;
@@ -36,6 +37,16 @@ public class RegistrationTest extends TestBase{
                 .withEmail("vasya_pupkin"+(int)(System.currentTimeMillis()/1000)%3600+"@gmail.com")
                 .withPassword("Vp12345$")
                 ;
+        app.getUser().openLoginForm();
+        app.getUser().fillLoginForm(user);
+        app.getUser().submitRegistrationForm();
+        app.getUser().pause(3000);
+        Assert.assertTrue(app.getUser().isElementPresent(By.xpath("//button")));
+
+    }
+    @Test(groups = {"smoke", "positive","regress"},dataProvider = "userDTOCSV",dataProviderClass = ProviderData.class)
+    public void registrationPositiveTestUserCSV(User user){
+        logger.info("Registration starts with email: "+user.getEmail()+" and password "+user.getPassword());
         app.getUser().openLoginForm();
         app.getUser().fillLoginForm(user);
         app.getUser().submitRegistrationForm();
